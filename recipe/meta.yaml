@@ -1,4 +1,4 @@
-{% set version = '1.4.4' %}
+{% set version = "1.6.0" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/optparse_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/optparse/optparse_{{ version }}.tar.gz
-  sha256: 0b1f1d336f1be386260fb5bbdf74f01787c09176d69febf8d563e5af75e5c4b9
+  sha256: 10e816bb8f5b08d52cfd3a0028903a8c62ef9cf7bfd85f9dae8af442e82bfbb4
 
 build:
   number: 0
@@ -25,11 +25,11 @@ build:
 requirements:
   build:
     - r-base
-    - r-getopt >=1.19.0
+    - r-getopt >=1.20.2
 
   run:
     - r-base
-    - r-getopt >=1.19.0
+    - r-getopt >=1.20.2
 
 test:
   commands:
