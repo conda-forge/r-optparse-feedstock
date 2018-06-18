@@ -25,11 +25,11 @@ build:
 requirements:
   build:
     - r-base
-    - r-getopt >=1.19.0
+    - r-getopt >=1.20.2
 
   run:
     - r-base
-    - r-getopt >=1.19.0
+    - r-getopt >=1.20.2
 
 test:
   commands:
