@@ -1,5 +1,4 @@
-{% set version = "1.6.0" %}
-
+{% set version = '1.6.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,45 +7,66 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: optparse_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/optparse_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/optparse/optparse_{{ version }}.tar.gz
-  sha256: 10e816bb8f5b08d52cfd3a0028903a8c62ef9cf7bfd85f9dae8af442e82bfbb4
+    - {{ cran_mirror }}/src/contrib/optparse_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/optparse/optparse_{{ version }}.tar.gz
+  sha256: 819be3eff54cb7f3f18703eed9714fc655290ab8e169f87605433d069b597e13
 
 build:
+  merge_build_host: True  # [win]
+  number: 0
   noarch: generic
-  number: 1001
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-getopt >=1.20.2
-
   run:
     - r-base
     - r-getopt >=1.20.2
 
 test:
   commands:
-    - $R -e "library('optparse')"  # [not win]
+    - $R -e "library('optparse')"           # [not win]
     - "\"%R%\" -e \"library('optparse')\""  # [win]
 
 about:
-  home: https://github.com/trevorld/optparse
+  home: https://github.com/trevorld/r-optparse
   license: GPL (>= 2)
   summary: A command line parser inspired by Python's 'optparse' library to be used with Rscript
     to write "#!" shebang scripts that accept short and long flag/options.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
-    - dpryan79
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
+    - conda-forge/r
+
+# Encoding: UTF-8
+# Package: optparse
+# Type: Package
+# Title: Command Line Option Parser
+# Version: 1.6.1
+# Authors@R: c(person("Trevor L", "Davis", role = c("aut", "cre"), email="trevor.l.davis@gmail.com"), person("Allen", "Day", role="ctb", comment="Some documentation and examples ported from the getopt package."), person("Python Software Foundation", role="ctb", comment="Some documentation from the optparse Python module."), person("Steve", "Lianoglou", role="ctb"), person("Jim", "Nikelski", role="ctb"), person("Kirill", "Muller", role="ctb"), person("Peter", "Humburg", role="ctb"),  person("Rich", "FitzJohn", role="ctb"), person("Gyu Jin", "Choi", role="ctb"))
+# Description: A command line parser inspired by Python's 'optparse' library to be used with Rscript to write "#!" shebang scripts that accept short and long flag/options.
+# License: GPL (>= 2)
+# Copyright: See file (inst/)COPYRIGHTS.
+# URL: https://github.com/trevorld/r-optparse
+# BugReports: https://github.com/trevorld/r-optparse/issues
+# LazyLoad: yes
+# Depends: R (>= 2.9.0)
+# Imports: methods, getopt (>= 1.20.2)
+# Suggests: covr, knitr (>= 1.15.19), stringr, testthat
+# VignetteBuilder: knitr
+# RoxygenNote: 6.0.1
+# NeedsCompilation: no
+# Packaged: 2019-01-15 18:52:17 UTC; trevorld
+# Author: Trevor L Davis [aut, cre], Allen Day [ctb] (Some documentation and examples ported from the getopt package.), Python Software Foundation [ctb] (Some documentation from the optparse Python module.), Steve Lianoglou [ctb], Jim Nikelski [ctb], Kirill Muller [ctb], Peter Humburg [ctb], Rich FitzJohn [ctb], Gyu Jin Choi [ctb]
+# Maintainer: Trevor L Davis <trevor.l.davis@gmail.com>
+# Repository: CRAN
+# Date/Publication: 2019-01-15 21:20:03 UTC
