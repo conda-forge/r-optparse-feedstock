@@ -3,7 +3,7 @@ About r-optparse
 
 Home: https://github.com/trevorld/r-optparse
 
-Package license: GPL (>= 2)
+Package license: GPL-2
 
 Feedstock license: BSD 3-Clause
 
