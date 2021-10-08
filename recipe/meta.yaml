@@ -37,7 +37,7 @@ test:
 
 about:
   home: https://github.com/trevorld/r-optparse
-  license: GPL-2
+  license: GPL-2.0-or-later
   summary: A command line parser inspired by Python's 'optparse' library to be used with Rscript to write "#!" shebang scripts that accept short and long flag/options.
   license_family: GPL2
   license_file:
