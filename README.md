@@ -1,11 +1,11 @@
-About r-optparse
-================
+About r-optparse-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-optparse-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/trevorld/r-optparse
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-optparse-feedstock/blob/main/LICENSE.txt)
 
 Summary: A command line parser inspired by Python's 'optparse' library to be used with Rscript to write "#!" shebang scripts that accept short and long flag/options.
 
