@@ -1,4 +1,4 @@
-{% set version = "1.7.3" %}
+{% set version = "1.7.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/optparse_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/optparse/optparse_{{ version }}.tar.gz
-  sha256: 6287e1af051d4a65037900ce7b30bd962039450dd4eab63b6f2491eace6a07ed
+  sha256: 93a2d66594fa72d4e67e4cc2863306e5537f5b10a0d57aa819c8051340225d88
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
