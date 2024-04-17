@@ -1,4 +1,4 @@
-{% set version = "1.7.4" %}
+{% set version = "1.7.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/optparse_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/optparse/optparse_{{ version }}.tar.gz
-  sha256: 93a2d66594fa72d4e67e4cc2863306e5537f5b10a0d57aa819c8051340225d88
+  sha256: 0cc917505780786e69b8ceca4b3840ed7b0c011495108ec05af3871965415712
 
 build:
   merge_build_host: true  # [win]
