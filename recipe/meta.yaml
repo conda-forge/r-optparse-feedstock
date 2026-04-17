@@ -1,4 +1,4 @@
-{% set version = "1.7.5" %}
+{% set version = "1.8.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/optparse_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/optparse/optparse_{{ version }}.tar.gz
-  sha256: 0cc917505780786e69b8ceca4b3840ed7b0c011495108ec05af3871965415712
+  sha256: 281d862ece19bf2815e04449779d339e4f108b7a08d69ae7942b47a1592d98ff
 
 build:
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
